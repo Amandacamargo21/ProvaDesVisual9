@@ -1,0 +1,16 @@
+<h1>Listar Usuários</h1>
+
+<table>
+  <tr>
+    <th>#</th>
+    <th>Nome</th>
+    <th>Nascimento</th>
+    <th>Criado em</th>
+  </tr>
+  <tr *ngFor="let usuario of usuarios">
+    <td>{{ usuario.usuarioId }}</td>
+    <td>{{ usuario.nome }}</td>
+    <td>{{ usuario.nascimento }}</td>
+    <td>{{ usuario.criadoEm | date : "dd/MM/yyyy" }}</td>
+  </tr>
+</table>

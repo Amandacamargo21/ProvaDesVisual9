@@ -1,0 +1,26 @@
+POST https://localhost:5001/api/usuario/cadastrar
+Content-Type: application/json
+
+{
+    "nome" : "teste",
+    "nascimento" : "2001-05-08"
+}
+
+### Buscar um usuário pelo Id
+GET https://localhost:5001/API/usuario/buscar/9
+
+### Listar
+GET https://localhost:5001/api/usuario/listar
+
+###
+PATCH https://localhost:5001/api/usuario/alterar
+Content-Type: application/json
+
+{
+    "usuarioid" : 10,
+    "nome" : " sasasa alterado",
+    "nascimento" : "20/10/2022"
+}
+
+### Deletar um usuario
+DELETE https://localhost:5001/api/usuario/deletar/10

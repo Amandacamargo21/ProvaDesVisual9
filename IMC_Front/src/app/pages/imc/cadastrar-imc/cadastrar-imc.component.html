@@ -1,0 +1,61 @@
+<mat-card class="container">
+  <mat-card-header>
+    <mat-card-title> Cadastrar IMC </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-form-field *ngIf="id" class="input" id="id">
+      <mat-label for="id">Id:</mat-label>
+      <input disabled="" matInput type="text" name="id" [(ngModel)]="id" />
+    </mat-form-field>
+    <mat-form-field id="Peso" class="input">
+      <mat-label for="Peso">Peso:</mat-label>
+      <input
+        matInput
+        type="text"
+        placeholder="Quilos.gramas"
+        id="txtValor"
+        [(ngModel)]="peso"
+      />
+    </mat-form-field>
+    <mat-form-field class="input" id="Altura">
+      <mat-label for="Altura">Altura:</mat-label>
+      <input
+        matInput
+        type="text"
+        placeholder="Altura.centímetros"
+        name="Altura"
+        [(ngModel)]="altura"
+      />
+    </mat-form-field>
+    <mat-form-field id="usuarios" class="input">
+      <mat-label for="usuario">Usuários</mat-label>
+      <mat-select [(ngModel)]="usuarioId">
+        <mat-option
+          *ngFor="let usuario of usuarios"
+          value="{{ usuario.usuarioId }}"
+        >
+          {{ usuario.usuarioId }} - {{ usuario.nome }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-card-content>
+
+  <button
+    mat-raised-button
+    color="warn"
+    *ngIf="!id"
+    id="btnCadastrar"
+    (click)="cadastrar()"
+  >
+    Cadastrar
+  </button>
+  <button
+    mat-raised-button
+    color="warn"
+    *ngIf="id"
+    id="btnAlterar"
+    (click)="alterar()"
+  >
+    Salvar
+  </button>
+</mat-card>
